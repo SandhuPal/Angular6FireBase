@@ -1,0 +1,38 @@
+<div *ngIf="items?.length > 0;else noItems" fxLayout="column" fxLayout.xs="column" fxLayoutGap="20px">
+  <mat-card fxLayout="column" fxFlex="100%" fxLayout.xs="column" fxFlexFill *ngFor="let item of items" fxFlexFill>
+    <div fxLayout="row" fxLayoutAlign="space-between start">
+
+      <span fxLayout="column"><strong>{{item.title}}: </strong> {{item.description}} </span>
+
+      <a href="#" class="secondary-content">
+        <i (click)="editItem($event, item)" class="fa fa-pencil-alt"></i>
+
+        <i *ngIf="editState && itemToEdit.id == item.id" (click)="clearState($event, item)" class="fa fa-times-circle"></i>
+      </a>
+    </div>
+
+
+    <form (ngSubmit)="updateItem(item)" *ngIf="editState && itemToEdit.id == item.id" fxLayout="column" fxLayoutAlign="space-around stretch">
+      <p></p>
+      <mat-form-field fxLayout="column">
+        <input matInput placeholder="Title" [(ngModel)]="item.title" #ctrl="ngModel" name="title">
+      </mat-form-field>
+      <mat-form-field fxLayout="column">
+        <textarea matInput rows="2" placeholder="Add Description" [(ngModel)]="item.description" #ctrl="ngModel" name="description"></textarea>
+      </mat-form-field>
+      <div fxLayout="column" fxflex="40%">
+        <div fxLayout="row" fxLayoutAlign="space-between start">
+          <button type="submit" value="Update" class="btn orange" mat-raised-button color="warn">Update</button>
+          <button (click)="deleteItem($event, item)" mat-raised-button color="warn">Delete</button>
+          <button mat-raised-button (click)="openDialog()" color="primary">Instructions</button>
+        </div>
+      </div>
+
+    </form>
+  </mat-card>
+</div>
+
+<ng-template #noItems>
+  <hr>
+  <h5>There are no items to list</h5>
+</ng-template>
