@@ -5,19 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBifq0E7Z4jzlDuUSVpW5Sk5z7sQ_LniCA",
-    authDomain: "socialselfie-dbe83.firebaseapp.com",
-    databaseURL: "https://socialselfie-dbe83.firebaseio.com",
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
     projectId: "socialselfie-dbe83",
-    storageBucket: "socialselfie-dbe83.appspot.com",
-    messagingSenderId: "1018952789859"
+    storageBucket: "",
+    messagingSenderId: ""
 
-    // apiKey: "AIzaSyDdz4zZ6JpH_mDoHBhsBccSEUcYvEAlFVc",
-    // authDomain: "angularfire2-8345a.firebaseapp.com",
-    // databaseURL: "https://angularfire2-8345a.firebaseio.com",
-    // projectId: "angularfire2-8345a",
-    // storageBucket: "angularfire2-8345a.appspot.com",
-    // messagingSenderId: "474007964152"
   }
 };
 
