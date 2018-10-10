@@ -8,7 +8,7 @@ export const environment = {
     apiKey: "",
     authDomain: "",
     databaseURL: "",
-    projectId: "socialselfie-dbe83",
+    projectId: "",
     storageBucket: "",
     messagingSenderId: ""
 
